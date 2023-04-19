@@ -8,6 +8,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   box-sizing: border-box;
+  
 }
 
 code {
@@ -17,6 +18,7 @@ code {
 
 ul {
   list-style: none;
+  margin: 0;
   padding-left: 0;
 }
 
