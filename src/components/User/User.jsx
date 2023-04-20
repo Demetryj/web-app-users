@@ -1,7 +1,18 @@
+import { FiArrowLeft } from 'react-icons/fi';
+import { FiArrowRight } from 'react-icons/fi';
 import { useUsers } from '../../hooks/useUsers';
-import { MainTitle, ItemTitle, Box, Subtitle, Value } from './User.styled';
+import { ButtonUser } from '../BattonUser';
+import {
+  MainTitle,
+  WrapperData,
+  ItemTitle,
+  Box,
+  Subtitle,
+  Value,
+  ButtonBox,
+} from './User.styled';
 
-export const UserData = () => {
+export const User = () => {
   const {
     person,
     // isLoading,
@@ -30,7 +41,7 @@ export const UserData = () => {
     <>
       <MainTitle>User</MainTitle>
 
-      <div>
+      <WrapperData>
         <Box>
           <li>
             <Subtitle>
@@ -123,7 +134,18 @@ export const UserData = () => {
             </Subtitle>
           </li>
         </Box>
-      </div>
+      </WrapperData>
+
+      <ButtonBox>
+        <ButtonUser>
+          <FiArrowLeft />
+          Prev
+        </ButtonUser>
+        <ButtonUser>Update data</ButtonUser>
+        <ButtonUser>
+          Next <FiArrowRight />
+        </ButtonUser>
+      </ButtonBox>
     </>
   );
 };
