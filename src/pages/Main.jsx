@@ -1,5 +1,7 @@
+import { Welcome } from '../components/Welcome/Welcome';
+
 const Main = () => {
-  return <div>Main Page</div>;
+  return <Welcome />;
 };
 
 export default Main;
