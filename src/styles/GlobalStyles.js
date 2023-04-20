@@ -4,8 +4,7 @@ import 'modern-normalize';
 export const GlobalStyles = createGlobalStyle`
 body {
   margin: 0;
-  position: relative;
-  font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
   font-style: normal;
   box-sizing: border-box;
   
