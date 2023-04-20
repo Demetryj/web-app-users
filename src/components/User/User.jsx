@@ -1,5 +1,8 @@
+import { useNavigate } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { FiArrowRight } from 'react-icons/fi';
+import toast from 'react-hot-toast';
+
 import { useUsers } from '../../hooks/useUsers';
 import { ButtonUser } from '../BattonUser';
 import {
@@ -12,12 +15,31 @@ import {
   ButtonBox,
 } from './User.styled';
 
-export const User = () => {
+export const User = ({ userId }) => {
+  const navigate = useNavigate();
+
   const {
+    users,
     person,
     // isLoading,
     // error,
   } = useUsers();
+
+  const increment = userId => {
+    if (userId >= users.length) {
+      toast.error('No more users!');
+      return;
+    }
+    navigate(`/users/${Number(userId) + 1}`);
+  };
+
+  const decrement = userId => {
+    if (userId <= 1) {
+      toast.error('No more users!');
+      return;
+    }
+    navigate(`/users/${Number(userId) - 1}`);
+  };
 
   const {
     id,
@@ -137,12 +159,12 @@ export const User = () => {
       </WrapperData>
 
       <ButtonBox>
-        <ButtonUser>
+        <ButtonUser onClick={() => decrement(userId)}>
           <FiArrowLeft />
           Prev
         </ButtonUser>
         <ButtonUser>Update data</ButtonUser>
-        <ButtonUser>
+        <ButtonUser onClick={() => increment(userId)}>
           Next <FiArrowRight />
         </ButtonUser>
       </ButtonBox>
