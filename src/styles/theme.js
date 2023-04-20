@@ -13,9 +13,9 @@ export const theme = {
     bgColorTableMain: '#ffffff',
     bgTableBody: '#6ea0a385',
     bgTableStat: '#b1d4d785',
-    borderTableColor: '#aec4c685',
+    borderColor: '#aec4c685',
     darkColor: '#212121',
-    whiteColr: '#ffffff',
+    whiteColor: '#ffffff',
   },
 
   spacing: n => `${4 * n}px`,
@@ -63,7 +63,7 @@ export const theme = {
   shadows: {
     first:
       'rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px',
-    table: 'rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px',
+    second: 'rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px',
   },
 
   transitions: {
