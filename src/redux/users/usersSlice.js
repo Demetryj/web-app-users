@@ -1,8 +1,37 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getUsers, addUser, deleteUser, updateUser } from './operations';
+import {
+  getUsers,
+  getUserById,
+  addUser,
+  deleteUser,
+  updateUser,
+} from './operations';
 
 const initialState = {
-  users: [],
+  items: [],
+  person: {
+    id: '',
+    name: '',
+    username: '',
+    email: '',
+    address: {
+      street: '',
+      suite: '',
+      city: '',
+      zipcode: '',
+      geo: {
+        lat: '',
+        lng: '',
+      },
+    },
+    phone: '',
+    website: '',
+    company: {
+      name: '',
+      catchPhrase: '',
+      bs: '',
+    },
+  },
   isLoading: false,
   error: null,
 };
@@ -27,6 +56,14 @@ const usersSlice = createSlice({
         state.error = null;
       })
       .addCase(getUsers.rejected, handleRejected)
+
+      .addCase(getUserById.pending, handlePending)
+      .addCase(getUserById.fulfilled, (state, action) => {
+        state.person = action.payload;
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(getUserById.rejected, handleRejected)
 
       .addCase(addUser.pending, handlePending)
       .addCase(addUser.fulfilled, (state, action) => {
