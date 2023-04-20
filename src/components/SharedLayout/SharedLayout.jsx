@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { AppBar } from '../AppBar';
 import { Container } from './SharedLayout.styled';
-// import { Footer } from '../Footer';
+import { Footer } from '../Footer';
 
 export const SharedLayout = () => {
   return (
@@ -13,7 +13,7 @@ export const SharedLayout = () => {
           <Outlet />
         </Suspense>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </Container>
   );
 };
