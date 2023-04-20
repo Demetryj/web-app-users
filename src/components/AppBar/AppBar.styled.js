@@ -8,6 +8,7 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: ${p => p.theme.spacing(4)} 0;
+  z-index: 100;
 
   @media screen and (${p => p.theme.media.medium}) {
     justify-content: flex-start;
@@ -16,7 +17,7 @@ export const Header = styled.header`
 
   @media screen and (${p => p.theme.media.large}) {
     gap: ${p => p.theme.spacing(25)};
-    padding: ${p => p.theme.spacing(6)} 0;
+    padding: ${p => p.theme.spacing(5.5)} 0;
   }
 `;
 
