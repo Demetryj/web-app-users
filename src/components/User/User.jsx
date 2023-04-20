@@ -1,9 +1,5 @@
-import { useNavigate } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
-import { FiArrowRight } from 'react-icons/fi';
+import { useState } from 'react';
 import toast from 'react-hot-toast';
-
-import { useUsers } from '../../hooks/useUsers';
 import { ButtonUser } from '../BattonUser';
 import {
   MainTitle,
@@ -14,8 +10,14 @@ import {
   Value,
   ButtonBox,
 } from './User.styled';
+import { useNavigate } from 'react-router-dom';
+import { FiArrowLeft } from 'react-icons/fi';
+import { FiArrowRight } from 'react-icons/fi';
+import { useUsers } from '../../hooks/useUsers';
+import { Modal } from '../Modal';
 
 export const User = ({ userId }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
 
   const {
@@ -40,6 +42,31 @@ export const User = ({ userId }) => {
     }
     navigate(`/users/${Number(userId) - 1}`);
   };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+
+    const scrollY =
+      document.documentElement.style.getPropertyValue('--scroll-y');
+    const body = document.body;
+    body.style.position = 'fixed';
+    body.style.top = `-${scrollY}`;
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    const body = document.body;
+    const scrollY = body.style.top;
+    body.style.position = '';
+    body.style.top = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+  };
+  window.addEventListener('scroll', () => {
+    document.documentElement.style.setProperty(
+      '--scroll-y',
+      `${window.scrollY}px`
+    );
+  });
 
   const {
     id,
@@ -163,11 +190,14 @@ export const User = ({ userId }) => {
           <FiArrowLeft />
           Prev
         </ButtonUser>
-        <ButtonUser>Update data</ButtonUser>
+        <ButtonUser onClick={openModal}>Update data</ButtonUser>
         <ButtonUser onClick={() => increment(userId)}>
           Next <FiArrowRight />
         </ButtonUser>
       </ButtonBox>
+      {isModalOpen && (
+        <Modal onCloseModal={closeModal} isModalOpen={isModalOpen}></Modal>
+      )}
     </>
   );
 };
