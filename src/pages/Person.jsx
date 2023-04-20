@@ -15,7 +15,7 @@ const Person = () => {
 
   return (
     <Section>
-      <User />
+      <User userId={userId} />
     </Section>
   );
 };
