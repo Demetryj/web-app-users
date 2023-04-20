@@ -4,7 +4,7 @@ export const Table = styled.table`
   margin-right: auto;
   margin-left: auto;
   border-spacing: ${p => p.theme.spacing(0)};
-  box-shadow: ${p => p.theme.shadows.table};
+  box-shadow: ${p => p.theme.shadows.second};
 `;
 
 export const HeadCell = styled.th`
@@ -16,7 +16,7 @@ export const HeadCell = styled.th`
   text-align: center;
   background-color: ${p => p.theme.colors.bgColorHeadTable};
   padding: ${p => p.theme.spacing(2.5)};
-  height: ${p => p.theme.spacing(5)};
+  /* height: ${p => p.theme.spacing(5)}; */
   :not(:last-child) {
     border-right: ${p => p.theme.borders.normal};
     border-color: ${p => p.theme.colors.whiteColor};
@@ -24,6 +24,8 @@ export const HeadCell = styled.th`
 `;
 
 export const BodyRow = styled.tr`
+  cursor: pointer;
+
   :nth-child(even) {
     background-color: ${p => p.theme.colors.bgTableStat};
   }
@@ -41,14 +43,18 @@ export const BodyCell = styled.td`
     text-transform: capitalize;
   }
 
-  min-width: 200px;
+  /* min-width: 200px; */
   text-align: center;
   padding: ${p => p.theme.spacing(2.5)};
-  height: ${p => p.theme.spacing(5)};
+  /* height: ${p => p.theme.spacing(5)}; */
 
+  border-left: ${p => p.theme.borders.normal};
+  border-bottom: ${p => p.theme.borders.normal};
+  border-color: ${p => p.theme.colors.borderColor};
+  /* 
   :not(:first-child) {
     border-left: ${p => p.theme.borders.normal};
     border-bottom: ${p => p.theme.borders.normal};
-    border-color: ${p => p.theme.colors.borderColor};
-  }
+    border-color: ${p => p.theme.colors.borderTableColor};
+  } */
 `;
