@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { DataUsers } from '../components/DataUsers/DataUsers';
 import { SearchUser } from '../components/SearchUser/SearchUser';
 import { getUsers } from '../redux/users/operations';
+import { Section } from '../components/Section';
 
 const Users = () => {
   const dispatch = useDispatch();
@@ -12,10 +13,10 @@ const Users = () => {
   }, [dispatch]);
 
   return (
-    <section>
+    <Section>
       <SearchUser />
       <DataUsers />
-    </section>
+    </Section>
   );
 };
 
