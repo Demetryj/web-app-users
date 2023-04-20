@@ -36,7 +36,7 @@ export const AppBar = () => {
         </nav>
       )}
 
-      {isOpenMenu && <BurgerMenu onClick={toggleMenu} />}
+      {isOpenMenu && <BurgerMenu onCloseMenu={toggleMenu} />}
 
       <ButtonMenu isVisible={visible} onClick={toggleMenu}>
         {!isOpenMenu ? <OpenMenuIcon /> : <CloseMenuIcon />}
