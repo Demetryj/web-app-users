@@ -4,7 +4,7 @@ import { BiCopyright } from 'react-icons/bi';
 export const FooterWrapper = styled.footer`
   position: absolute;
   left: 0;
-  top: 0;
+  bottom: 0;
   padding: ${p => p.theme.spacing(8)} 0;
   width: 100%;
   background-color: ${p => p.theme.colors.bgColorFooter};
