@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { BiCopyright } from 'react-icons/bi';
 
 export const FooterWrapper = styled.footer`
-  position: absolute;
+  /* position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 0; */
   padding: ${p => p.theme.spacing(8)} 0;
   width: 100%;
   background-color: ${p => p.theme.colors.bgColorFooter};
