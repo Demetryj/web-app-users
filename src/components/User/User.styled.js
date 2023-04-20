@@ -14,6 +14,14 @@ export const MainTitle = styled.h2`
   }
 `;
 
+export const WrapperData = styled.div`
+  margin-bottom: ${p => p.theme.spacing(6)};
+
+  @media screen and (${p => p.theme.media.large}) {
+    margin-bottom: ${p => p.theme.spacing(8)};
+  }
+`;
+
 export const ItemTitle = styled.p`
   margin: ${p => p.theme.spacing(2)} 0;
   font-weight: ${p => p.theme.fontWeights.semiBold};
@@ -59,4 +67,10 @@ export const Box = styled.ul`
   display: flex;
   flex-direction: column;
   gap: ${p => p.theme.spacing(2)};
+`;
+
+export const ButtonBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
