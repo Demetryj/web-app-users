@@ -53,13 +53,9 @@ export const deleteUser = createAsyncThunk(
 
 export const updateUser = createAsyncThunk(
   'users/updateUser',
-  async ({ userId, name, username, email }, thunkAPI) => {
+  async (data, thunkAPI) => {
     try {
-      const response = await axios.patch(`users/${userId}`, {
-        name,
-        username,
-        email,
-      });
+      const response = await axios.patch(`users/${data.id}`, data);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
