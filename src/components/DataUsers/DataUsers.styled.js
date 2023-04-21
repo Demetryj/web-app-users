@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Table = styled.table`
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: ${p => p.theme.spacing(6)};
   border-spacing: ${p => p.theme.spacing(0)};
   box-shadow: ${p => p.theme.shadows.second};
 `;
@@ -16,7 +17,7 @@ export const HeadCell = styled.th`
   text-align: center;
   background-color: ${p => p.theme.colors.bgColorHeadTable};
   padding: ${p => p.theme.spacing(2.5)};
-  /* height: ${p => p.theme.spacing(5)}; */
+
   :not(:last-child) {
     border-right: ${p => p.theme.borders.normal};
     border-color: ${p => p.theme.colors.whiteColor};
@@ -43,18 +44,18 @@ export const BodyCell = styled.td`
     text-transform: capitalize;
   }
 
-  /* min-width: 200px; */
   text-align: center;
   padding: ${p => p.theme.spacing(2.5)};
-  /* height: ${p => p.theme.spacing(5)}; */
 
   border-left: ${p => p.theme.borders.normal};
   border-bottom: ${p => p.theme.borders.normal};
   border-color: ${p => p.theme.colors.borderColor};
-  /* 
-  :not(:first-child) {
-    border-left: ${p => p.theme.borders.normal};
-    border-bottom: ${p => p.theme.borders.normal};
-    border-color: ${p => p.theme.colors.borderTableColor};
-  } */
+
+  @media screen and (${p => p.theme.media.medium}) {
+    min-width: 200px;
+  }
+
+  @media screen and (${p => p.theme.media.large}) {
+    min-width: 300px;
+  }
 `;
