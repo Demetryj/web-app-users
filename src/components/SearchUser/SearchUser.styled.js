@@ -27,7 +27,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  padding: ${props => props.theme.spacing(1)};
+  padding: ${props => props.theme.spacing(2)};
 
   font-family: inherit;
   font-weight: ${props => props.theme.fontWeights.regular};
