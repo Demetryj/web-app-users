@@ -1,8 +1,8 @@
 import { Button } from './ButtonUser.styled';
 
-export const ButtonUser = ({ children, onClick }) => {
+export const ButtonUser = ({ children, onClick, type = 'button' }) => {
   return (
-    <Button type="button" onClick={onClick}>
+    <Button type={type} onClick={onClick}>
       {children}
     </Button>
   );
