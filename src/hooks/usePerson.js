@@ -88,35 +88,6 @@ export const usePerson = data => {
     }
   };
 
-  //   const hendleSubmit = event => {
-  //     event.preventDefault();
-  //     dispatch(
-  //       deleteUser({
-  //         id,
-  //         name: nameOfUserV,
-  //         username: usernameV,
-  //         email: emailV,
-  //         address: {
-  //           street: streetV,
-  //           suite: suiteV,
-  //           city: cityV,
-  //           zipcode: zipcodeV,
-  //           geo: {
-  //             lat: latV,
-  //             lng: lngV,
-  //           },
-  //         },
-  //         phone: phoneV,
-  //         website: websiteV,
-  //         company: {
-  //           name: nameV,
-  //           catchPhrase: catchPhraseV,
-  //           bs: bsV,
-  //         },
-  //       })
-  //     );
-  //   };
-
   const newDataUser = {
     id,
     name: nameOfUserV,
