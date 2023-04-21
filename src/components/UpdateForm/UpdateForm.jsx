@@ -3,6 +3,7 @@ import { deleteUser } from '../../redux/users/operations';
 import { ButtonUser } from '../BattonUser';
 import { usePerson } from '../../hooks/usePerson';
 import { updateUser } from '../../redux/users/operations';
+
 import {
   Form,
   Title,
@@ -38,6 +39,7 @@ export const UpdateForm = ({ data, onCloseModal }) => {
   const hendleSubmit = event => {
     event.preventDefault();
     dispatch(updateUser(newDataUser));
+    onCloseModal();
   };
 
   const onRemoveUser = id => {
@@ -46,7 +48,7 @@ export const UpdateForm = ({ data, onCloseModal }) => {
   };
 
   return (
-    <Form onClick={hendleSubmit}>
+    <Form onSubmit={hendleSubmit}>
       <Title>User</Title>
       <Wrapper>
         <Label htmlFor="nameOfUser">
@@ -220,9 +222,7 @@ export const UpdateForm = ({ data, onCloseModal }) => {
 
       <WrapperButtons>
         <ButtonUser onClick={() => onRemoveUser(id)}>Delete</ButtonUser>
-        <ButtonUser type="submit" onClick={onCloseModal}>
-          Update
-        </ButtonUser>
+        <ButtonUser type="submit">Update</ButtonUser>
         <ButtonUser onClick={onCloseModal}>Cancel</ButtonUser>
       </WrapperButtons>
     </Form>
