@@ -78,11 +78,33 @@ const usersSlice = createSlice({
         state.isLoading = false;
         state.error = null;
 
-        const index = state.items.findIndex(
-          contact => contact.id === action.payload.id
-        );
-
+        const index = state.items.findIndex(user => user.id === action.payload);
+        console.log(action.payload);
         state.items.splice(index, 1);
+
+        state.person = {
+          id: '',
+          name: '',
+          username: '',
+          email: '',
+          address: {
+            street: '',
+            suite: '',
+            city: '',
+            zipcode: '',
+            geo: {
+              lat: '',
+              lng: '',
+            },
+          },
+          phone: '',
+          website: '',
+          company: {
+            name: '',
+            catchPhrase: '',
+            bs: '',
+          },
+        };
       })
       .addCase(deleteUser.rejected, handleRejected)
 
@@ -90,12 +112,14 @@ const usersSlice = createSlice({
       .addCase(updateUser.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        const updatedUser = state.items.find(
-          contact => contact.id === action.payload.id
+
+        const index = state.items.findIndex(
+          user => user.id === action.payload.id
         );
-        updatedUser.name = action.payload.name;
-        updatedUser.number = action.payload.number;
-        updatedUser.email = action.payload.number;
+
+        state.items[index] = { ...action.payload };
+
+        state.person = action.payload;
       })
       .addCase(updateUser.rejected, handleRejected);
   },
