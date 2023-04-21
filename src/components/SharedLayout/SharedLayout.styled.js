@@ -19,10 +19,5 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.main`
-  min-height: 80vh;
-  /* padding: ${p => p.theme.spacing(6)} 0; */
-
-  @media screen and (${p => p.theme.media.large}) {
-    /* padding: ${p => p.theme.spacing(8)} 0; */
-  }
+  min-height: calc(100vh - 145.5px);
 `;
