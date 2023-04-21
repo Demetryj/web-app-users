@@ -15,7 +15,7 @@ export const WrapperFilter = styled.div`
 export const Label = styled.label`
   display: flex;
   flex-direction: column;
-  gap: ${props => props.theme.spacing(1)};
+  gap: ${props => props.theme.spacing(2)};
 
   font-size: ${props => props.theme.fontSizes.m};
   font-weight: ${props => props.theme.fontWeights.bold};
