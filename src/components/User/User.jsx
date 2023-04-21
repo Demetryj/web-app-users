@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import toast from 'react-hot-toast';
-import { ButtonUser } from '../BattonUser';
 import {
   MainTitle,
   WrapperData,
@@ -14,7 +13,9 @@ import { useNavigate } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { FiArrowRight } from 'react-icons/fi';
 import { useUsers } from '../../hooks/useUsers';
+import { ButtonUser } from '../BattonUser';
 import { Modal } from '../Modal';
+import { UpdateForm } from '../UpdateForm';
 
 export const User = ({ userId }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -196,7 +197,9 @@ export const User = ({ userId }) => {
         </ButtonUser>
       </ButtonBox>
       {isModalOpen && (
-        <Modal onCloseModal={closeModal} isModalOpen={isModalOpen}></Modal>
+        <Modal onCloseModal={closeModal} isModalOpen={isModalOpen}>
+          <UpdateForm data={person} onCloseModal={closeModal} />
+        </Modal>
       )}
     </>
   );
