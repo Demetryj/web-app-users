@@ -19,6 +19,7 @@ import { UpdateForm } from '../UpdateForm';
 
 export const User = ({ userId }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const navigate = useNavigate();
 
   const {
