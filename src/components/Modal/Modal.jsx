@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Overlay, WindiwModal } from './Modal.styled';
+import { Overlay } from './Modal.styled';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -28,9 +28,7 @@ export const Modal = ({ onCloseModal, isModalOpen, children }) => {
   }, [isModalOpen, onCloseModal]);
 
   return createPortal(
-    <Overlay onClick={handleOverlayClick}>
-      <WindiwModal>{children}</WindiwModal>
-    </Overlay>,
+    <Overlay onClick={handleOverlayClick}>{children}</Overlay>,
     modalRoot
   );
 };
