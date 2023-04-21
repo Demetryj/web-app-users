@@ -79,7 +79,6 @@ const usersSlice = createSlice({
         state.error = null;
 
         const index = state.items.findIndex(user => user.id === action.payload);
-        console.log(action.payload);
         state.items.splice(index, 1);
 
         state.person = {
@@ -119,7 +118,7 @@ const usersSlice = createSlice({
 
         state.items[index] = { ...action.payload };
 
-        state.person = action.payload;
+        state.person = { ...action.payload };
       })
       .addCase(updateUser.rejected, handleRejected);
   },
