@@ -6,10 +6,10 @@ export const MenuWrapper = styled.div`
   left: 0;
   padding: ${p => p.theme.spacing(12)} ${p => p.theme.spacing(10)};
 
-  background-color: ${p => p.theme.colors.bgColorBurgerMenu};
-
   width: 100vw;
   height: 100vh;
+
+  background-color: ${p => p.theme.colors.bgColorBurgerMenu};
 
   z-index: 5;
 
