@@ -9,11 +9,7 @@ import { Table, HeadCell, BodyRow, BodyCell } from './DataUsers.styled';
 export const DataUsers = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const {
-    // isLoading,
-    // error,
-    visibleUsers,
-  } = useUsers();
+  const { visibleUsers } = useUsers();
 
   const navigate = useNavigate();
 

@@ -1,9 +1,6 @@
 import { NavList, NavItem } from './NavLinkList.styled';
 
-const navRoutes = [
-  { item: 'Users', route: 'users' },
-  { item: 'Person', route: 'users/:userId' },
-];
+const navRoutes = [{ item: 'Users', route: 'users' }];
 
 export const NavLinkList = ({ mobile, onCloseMenu }) => {
   return (

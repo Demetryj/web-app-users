@@ -1,10 +1,6 @@
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { deleteUser } from '../redux/users/operations';
 
 export const usePerson = data => {
-  //   const dispatch = useDispatch();
-
   const {
     id,
     name: nameOfUser,

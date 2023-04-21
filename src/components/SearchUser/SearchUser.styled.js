@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const WrapperFilter = styled.div`
   margin: 0 auto ${props => props.theme.spacing(6)};
-  /* margin-bottom: ${props => props.theme.spacing(6)}; */
   padding: ${props => props.theme.spacing(2)};
   width: 300px;
 

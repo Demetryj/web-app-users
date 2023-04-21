@@ -39,11 +39,6 @@ export const AddUserForm = ({ onCloseModal }) => {
     onCloseModal();
   };
 
-  //   const onRemoveUser = id => {
-  //     dispatch(addUser(id));
-  //     onCloseModal();
-  //   };
-
   return (
     <Form onSubmit={hendleSubmit}>
       <Title>User</Title>

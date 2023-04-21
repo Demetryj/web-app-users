@@ -1,27 +1,6 @@
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { deleteUser } from '../redux/users/operations';
 
 export const useAddUser = () => {
-  //   const dispatch = useDispatch();
-
-  //   const {
-  //     id,
-  //     name: nameOfUser,
-  //     username,
-  //     email,
-  //     address: {
-  //       street,
-  //       suite,
-  //       city,
-  //       zipcode,
-  //       geo: { lat, lng },
-  //     },
-  //     phone,
-  //     website,
-  //     company: { name, catchPhrase, bs },
-  //   } = data;
-
   const [nameOfUserV, setNameOfUserV] = useState('');
   const [usernameV, setUsernameV] = useState('');
   const [emailV, setEmailV] = useState('');

@@ -1,12 +1,9 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  /* position: relative; */
-
   display: flex;
   flex-direction: column;
   gap: ${props => props.theme.spacing(6)};
-  /* padding: ${props => props.theme.spacing(4)}; */
 
   overflow-y: scroll;
   width: 90vw;
@@ -15,12 +12,6 @@ export const Form = styled.form`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  /* width: */
-
-  /* border: ${props => props.theme.borders.normal};
-  border-radius: ${props => props.theme.radii.normal};
-  border-color: ${props => props.theme.colors.borderColor}; */
 `;
 
 export const Wrapper = styled.div`
@@ -28,8 +19,6 @@ export const Wrapper = styled.div`
   justify-content: center;
   gap: ${props => props.theme.spacing(4)};
   padding: ${props => props.theme.spacing(4)};
-  /* width: 100%;
-  height: 100%; */
 
   overflow-y: scrol;
   @media screen and (max-width: 767px) {

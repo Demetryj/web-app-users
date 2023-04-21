@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { deleteUser } from '../../redux/users/operations';
+import { updateUser } from '../../redux/users/operations';
 import { ButtonUser } from '../BattonUser';
 import { usePerson } from '../../hooks/usePerson';
-import { updateUser } from '../../redux/users/operations';
 
 import {
   Form,

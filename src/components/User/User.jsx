@@ -22,12 +22,7 @@ export const User = ({ userId }) => {
 
   const navigate = useNavigate();
 
-  const {
-    users,
-    person,
-    // isLoading,
-    // error,
-  } = useUsers();
+  const { users, person } = useUsers();
 
   const increment = userId => {
     if (userId >= users.length) {
